@@ -1,13 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
 import { getFirestore } from 'firebase-admin/firestore';
 import { NotFoundError } from '../errors/not-found.error';
+import { User } from '../models/user.model';
 
 
-type User = {
-    id: number;
-    nome: string;
-    email: string;
-}
+
 
 
 export class UsersController {
