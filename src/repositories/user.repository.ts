@@ -33,8 +33,9 @@ export class UserRepository {
         }
     }
 
-    async save(use: User): Promise<void> {
-        await this.collection.add(use);
+    async save(user: User) {
+        delete user.password
+        await this.collection.add(user);
     }
 
     async update(user: User) {
